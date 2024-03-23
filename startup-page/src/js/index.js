@@ -57,19 +57,30 @@ function handle_current_date() {
 //===: get weather implementation :===
 async function handle_current_weather() {
     const current_weather_element = document.getElementById('current_weather');
-    
+
     const database = await fetch('src/database/profile.json');
     const database_json = await database.json();
-    
-    const API = database_json.API_KEY;
+
+    // const API = database_json.API_KEY;
     const city = database_json.city;
-    const country = database_json.country;
-    
-    const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true`);
-    const data = await response.json();
+    // const country = database_json.country; // useless
+
+
+    //TODO: measure time
+    // First get coordinates
+    const startTime = performance.now();
+
+    let response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=10&language=en&format=json`);
+    let data = await response.json();
+    const latitude = data.results[0].latitude;
+    const longitude = data.results[0].longitude;
+
+    response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
+    data = await response.json();
 
     const temperature = Math.round(data.current_weather.temperature);
-    const description = "took 41ms";
+    const endTime = performance.now();
+    const description = `took ${endTime - startTime}ms`;
 
     current_weather_element.textContent = `${temperature} °C | ${description}`;
 };
