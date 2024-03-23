@@ -1,19 +1,18 @@
 {
-    "username": "noriaku",
-    
-    "country": "Peru",
-    "city": "Lima",
+    "username": "Friend",
+    "country": "Poland",
+    "city": "Gliwice",
 
     "categories": {
-        "work": {
+        "rau-1": {
             "slack": "https://slack.com/",
             "trello": "https://trello.com"
         },
-        "news": {
-            "xataka": "https://xataka.com",
+        "rau-2": {
+            "hackernews": "https://news.ycombinator.com",
             "theverge": "https://theverge.com"
         },
-        "social": {
+        "rau-3": {
             "github": "https://github.com",
             "reddit": "https://reddit.com"
         }
