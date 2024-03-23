@@ -1,5 +1,5 @@
 /* @noriaku | Kalos Lazo */
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap')
 /*===: root :===*/
 /* Change with your colorscheme colors ;)  */
 :root {
@@ -39,7 +39,7 @@
     --col-sky-blue-02: #90C6E1;
     --col-sky-blue-03: #A3D8F4;
 
-    --ff-mono: "Agave Nerd Font";
+    --ff-mono: "IBM Plex Mono";
     --ff-weight-base: 400;
 }
 
