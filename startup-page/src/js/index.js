@@ -65,22 +65,51 @@ async function handle_current_weather() {
     const city = database_json.city;
     // const country = database_json.country; // useless
 
-
-    //TODO: measure time
+    // TODO: add data validation.
     // First get coordinates
     const startTime = performance.now();
 
-    let response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=10&language=en&format=json`);
-    let data = await response.json();
-    const latitude = data.results[0].latitude;
-    const longitude = data.results[0].longitude;
+    async function get_coordinates(city) {
+        return fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=10&language=en&format=json`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const latitude = data.results[0].latitude;
+                const longitude = data.results[0].longitude;
+                return {'lat': latitude, 'long': longitude};
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+                return {'lat': 0, 'long': 0};
+            });
+    };
 
-    response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);
-    data = await response.json();
+    let data = await get_coordinates(city);
+    const latitude = data.lat;
+    const longitude = data.long;
 
-    const temperature = Math.round(data.current_weather.temperature);
+    // Get weather data based on coordinates
+    let temperature = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
+                        .then((response) => {
+                            if (!response.ok) {
+                                throw new Error('API response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then((data) => {
+                           return data.current_weather.temperature; 
+                        }).catch((error) => {
+                            console.error('Error fetching data:', error);
+                            return 0;
+                        });
+
+    temperature = Math.round(temperature);
     const endTime = performance.now();
-    const description = `took ${endTime - startTime}ms`;
+    const description = `took ${(endTime - startTime).toPrecision(2)}ms`;
 
     current_weather_element.textContent = `${temperature} °C | ${description}`;
 };

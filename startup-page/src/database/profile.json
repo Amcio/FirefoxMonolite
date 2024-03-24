@@ -5,15 +5,16 @@
 
     "categories": {
         "rau-1": {
-            "slack": "https://slack.com/",
-            "trello": "https://trello.com"
+            "Measurement Systems": "https://platforma.polsl.pl/rau1/course/view.php?id=112",
+            "Numerical Methods": "https://platforma.polsl.pl/rau1/course/view.php?id=93"
         },
         "rau-2": {
             "hackernews": "https://news.ycombinator.com",
-            "theverge": "https://theverge.com"
+            "Theory of Computer Science": "https://platforma.polsl.pl/rau2/course/view.php?id=217"
         },
         "rau-3": {
-            "github": "https://github.com",
+            "Electronic Devices and Circuits": "https://platforma.polsl.pl/rau3/course/view.php?id=80208",
+            "Digital Circuits": "https://platforma.polsl.pl/rau3/course/view.php?id=83",
             "reddit": "https://reddit.com"
         }
     }
