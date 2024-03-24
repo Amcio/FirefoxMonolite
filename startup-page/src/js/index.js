@@ -109,7 +109,7 @@ async function handle_current_weather() {
 
     temperature = Math.round(temperature);
     const endTime = performance.now();
-    const description = `took ${(endTime - startTime).toPrecision(2)}ms`;
+    const description = `took ${Math.round((endTime - startTime + Number.EPSILON) * 100) / 100}ms`;
 
     current_weather_element.textContent = `${temperature} °C | ${description}`;
 };
