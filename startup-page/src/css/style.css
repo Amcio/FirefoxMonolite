@@ -4,6 +4,28 @@
     src: url('../fonts/BlexMonoNerdFontMono-Regular.ttf') format('truetype'),
          url('../fonts/BlexMonoNerdFontMono-Bold.ttf') format('truetype');
 }
+
+@media screen and (max-width: 600px) {
+    .flex {
+        flex-direction: column;
+    }
+    .terminal-form {
+        flex-direction: column;
+    }
+    body {
+        height: 100%;
+    }
+    #section_top_info {
+        padding: 1.5em 0em;
+    }
+    input#search {
+        border-bottom: 1px solid var(--col-red-01);
+    }
+    input#search:focus {
+        border-bottom: 0;
+    }
+}
+
 /*===: root :===*/
 /* Change with your colorscheme colors ;)  */
 :root {
