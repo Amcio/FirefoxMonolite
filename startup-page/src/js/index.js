@@ -124,6 +124,12 @@ function handle_current_time() {
     current_time_element.textContent = `${hours}:${minutes}`;
 };
 
+window.onload = function() {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.getElementById('search').autofocus = false;
+    }
+  };
+
 handle_current_time();
 handle_current_date();
 handle_current_weather();
