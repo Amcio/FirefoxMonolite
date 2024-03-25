@@ -125,8 +125,8 @@ function handle_current_time() {
 };
 
 window.onload = function() {
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      document.getElementById('search').autofocus = false;
+    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.getElementById('search').autofocus = true;
     }
   };
 
