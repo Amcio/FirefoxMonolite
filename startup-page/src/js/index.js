@@ -128,6 +128,8 @@ window.onload = function() {
     if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       document.getElementById('search').autofocus = true;
       document.getElementById('search').focus();
+    } else {
+        document.getElementById('search').placeholder = 'Ask the Internet';
     }
   };
 
