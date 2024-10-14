@@ -5,16 +5,17 @@
 
     "categories": {
         "rau-1": {
-            "Measurement Systems": "https://platforma.polsl.pl/rau1/course/view.php?id=112",
-            "Numerical Methods": "https://platforma.polsl.pl/rau1/course/view.php?id=93"
+            "Control Fundamentals": "https://platforma.polsl.pl/rau1/course/view.php?id=422",
+            "Computer Networks": "https://platforma.polsl.pl/rau1/course/view.php?id=1178"
         },
         "rau-2": {
             "hackernews": "https://news.ycombinator.com",
             "Theory of Computer Science": "https://platforma.polsl.pl/rau2/course/view.php?id=217"
         },
         "rau-3": {
-            "Electronic Devices and Circuits": "https://platforma.polsl.pl/rau3/course/view.php?id=80208",
-            "Digital Circuits": "https://platforma.polsl.pl/rau3/course/view.php?id=83",
+            "Artificial Intelligence": "https://platforma.polsl.pl/rau3/course/view.php?id=51",
+            "Analog and Digital Signal Processing": "https://platforma.polsl.pl/rau3/course/view.php?id=464",
+            "Microprocessor Systems": "https://platforma.polsl.pl/rau3/course/view.php?id=150",
             "reddit": "https://old.reddit.com"
         }
     }
